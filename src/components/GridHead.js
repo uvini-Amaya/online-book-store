@@ -3,12 +3,10 @@ import './App.css';
 import { FormGroup, Form, Button , Image} from "react-bootstrap";
 import cart from '../assets/svgs/cart.svg'
 import { Link } from "react-router-dom";
-import blob1 from '../assets/images/blob1.png'
+import reading from '../assets/images/reading.jpeg'
 
 
-
-
-const TestBooksHolder = () =>{
+const GridHead = () =>{
 
     const [isVisible, setIsVisible] = useState(false);
 
@@ -28,7 +26,7 @@ const handleMouseLeave =() =>{
                         
                         <Form onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='form'>
                             
-                            <Image className="holder-image" src={blob1} alt="image" onError={() =>console.log("Image Loading Error")}></Image>
+                            <Image className="holder-image" src={reading} alt="image" onError={() =>console.log("Image Loading Error")}></Image>
                             <div className="inner-button">
                                 {<Link to={'/Addtocart'} > <Button className="inner-cart"><Image className="inner-carticon" src={cart} alt=""></Image></Button></Link>}
                             </div>
@@ -59,4 +57,4 @@ const handleMouseLeave =() =>{
 
 
 }
-export default TestBooksHolder;
+export default GridHead;

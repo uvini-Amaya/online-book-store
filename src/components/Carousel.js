@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import BookHolder from "./BookHolder";
 import { Link } from "react-router-dom";
-import Bookpreview from "./Bookpreview";
+import Bookpreview from "./BookPreview";
 
 const Carousel = ()=> {
 
@@ -21,7 +21,7 @@ const Carousel = ()=> {
 
         try {
           
-          const response = await axios.get('http://localhost:8080/books');
+          const response = await axios.get('http://localhost:8080/getBooks');
 
           if(response.status === 200){
               setBooks(response.data);
@@ -126,7 +126,6 @@ const Carousel = ()=> {
                             <Link to={`/book/${book.bookID}`} key={book.bookID}>
                             <BookHolder key={bookID} book={book}/>
 
-                            {/* <h2>{index}</h2> */}
                             </Link>
 
                             <Bookpreview book = {book}/>

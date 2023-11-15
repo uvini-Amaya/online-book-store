@@ -1,6 +1,6 @@
 import React from "react";
 import BookHolder from "./BookHolder";
-import TestBooksHolder from "./TestBooksHolder";
+import TestBooksHolder from "./GridHead";
 import axios from 'axios';
 import { useEffect, useState} from 'react';
 import './App.css';

@@ -1,12 +1,13 @@
 import React from "react";
 import './App.css';
+import { Button } from "react-bootstrap";
 
 const Checkoutbody = () =>{
 
     return(
         <>
         <div>
-            <h1>Checkout</h1>
+            <Button>Checkout</Button>
         </div>
         
         </>

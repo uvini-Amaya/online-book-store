@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from 'react';
-import TestBooksHolder from '../components/TestBooksHolder';
+import TestBooksHolder from './GridHead';
 import axios from 'axios';
 import { Image, Form, FormGroup, Button, Table, ModalFooter } from 'react-bootstrap';
 import jbookstorelogo from '../assets/images/jbookstorelogo.png'
@@ -15,7 +15,7 @@ import home from '../assets/svgs/home.svg'
 import { Input } from '@mui/joy';
 import './App.css';
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
+import Header from "./Navbar";
 import Footer from "../components/Footer";
 import Checkoutbody from "./Checkoutbody";
 

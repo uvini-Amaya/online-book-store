@@ -1,11 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Homepage from './Homepage';
+import Home from './Home';
 import Checkout from './Checkout';
-import Addtocart from './Addtocart';
-import Bookpreview from './Bookpreview';
-
+import BookPreview from './BookPreview';
+import Addtocart from './AddToCart';
+import BookRack from './BookRack';
+import ContactUs from './ContactUs';
+import Navbar from './Navbar';
+import GridHead from './GridHead';
 
 const App = () => {
   return (
@@ -13,10 +16,14 @@ const App = () => {
     <div className="App">
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Homepage/>}></Route>
-            <Route path='/Checkout' element={<Checkout/>}></Route>
-            <Route path='/Addtocart' element={<Addtocart/>}></Route>
-            <Route path='/book/:bookID' element={<Bookpreview/>}></Route>
+            <Route path='/' element={<Home/>}></Route>
+            <Route path='/checkout' element={<Checkout/>}></Route>
+            <Route path='/addToCart' element={<Addtocart/>}></Route>
+            <Route path='/bookPreview' element={<BookPreview/>}></Route>
+            <Route path='/GridHead' element={<GridHead/>}></Route>
+            <Route path='/bookRack' element={<BookRack/>}></Route>
+            <Route path='/contact' element={<ContactUs/>}></Route>
+            <Route path='/navbar' element={<Navbar/>}></Route>
            </Routes> 
         </BrowserRouter>
       </div>

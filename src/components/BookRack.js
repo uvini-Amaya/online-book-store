@@ -1,21 +1,21 @@
 import React, {useEffect, useState } from "react";
 import './App.css';
 import './BookHolder.css';
-import cart from '../assets/svgs/cart.svg'
+import cart from '../assets/images/cart.png'
 import { FormGroup, Form, Button , Image} from "react-bootstrap";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
+const BookRack = ({book}) => {
 
-const BookHolder = ({book}) => {
+    const [isAvailable, setIsAvailable] = useState(false);
 
-    const [isVisible, setIsVisible] = useState(false);
-
-    const handleMouseEnter = () => {
-        setIsVisible(true);
+    const handleMouseIn = () => {
+        isAvailable(true);
     };
     
-    const handleMouseLeave =() =>{
-        setIsVisible(false);
+    const handleMouseOut =() =>{
+        setIsAvailable(false);
     };
 
 
@@ -26,8 +26,8 @@ const BookHolder = ({book}) => {
             <FormGroup className="holder">
                 <div className="formset">
                     <div className="inner-div">
-                        <Form onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='form'>
-                            <Image className="holder-image" src={`data:image/png;base64,${book.image}`} alt="image" onError={() =>console.log("Image Loading Error")}></Image>
+                        <Form onMouseIn={handleMouseIn} handleMouseOut={handleMouseOut} className='form'>
+                            <Image className="holder-image" src={`data:image/png;base64,${book.image}`} alt="image" onError={() =>console.log("error")}></Image>
                             <div className="inner-button">
                                 {<Link to={'/Addtocart'} > <Button className="inner-cart"><Image className="inner-carticon" src={cart} alt=""></Image></Button></Link>}
                             </div>
@@ -36,14 +36,12 @@ const BookHolder = ({book}) => {
                         <div className="text">
                             <div>
 
-                                <h5>{book.title}</h5>
+                                <h6>{book.title}</h6>
                                 <h6>{book.auhtor.authorName}</h6>
                                 <h6>Rs:{book.price}.00</h6>
-                                <h6>{book.isbnNumber}</h6>
                                 <h6>{book.description}</h6>
                                 <h6>{book.category.name}</h6>
                                 <h6>{book.subcategory.name}</h6>
-                                {/* <h6>{book.bookID}</h6> */}
                                 <h6>{book.subcategory_id}</h6>
                             </div>
                             
@@ -63,4 +61,10 @@ const BookHolder = ({book}) => {
     )
 }
 
-export default BookHolder;
+export default BookRack;
+
+
+
+
+
+
